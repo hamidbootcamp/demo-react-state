@@ -20,10 +20,10 @@ function Room() {
         console.log("Button Clicked");
         setLit(0);      
     }
-    function increaseTemp() {
-        console.log("Button Clicked");
-        setTemp(++Temp);      
-    }
+    // function increaseTemp() {
+    //     console.log("Button Clicked");
+    //     setTemp(++Temp);      
+    // }
     function decreaseTemp() {
         console.log("Button Clicked");
         setTemp(--Temp);      
