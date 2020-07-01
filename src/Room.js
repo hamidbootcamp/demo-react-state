@@ -5,32 +5,44 @@ function Room() {
     // const state  = useState(true);
     // console.log("State = ", state);
 
-    let [isLit, setLit]  = useState(true);
-    let [Age, setAge]  = useState(20);
+    let [isLit, setLit]  = useState(false);
+    let [Temp, setTemp]  = useState(72);
 
-    function updateLit() {
+    // function updateLit() {
+    //     console.log("Button Clicked");
+    //     setLit(!isLit);      
+    // }
+    function onLit() {
         console.log("Button Clicked");
-        setLit(!isLit);      
+        setLit(1);      
     }
-    function increaseAge() {
+    function offLit() {
         console.log("Button Clicked");
-        setAge(++Age);      
+        setLit(0);      
+    }
+    function increaseTemp() {
+        console.log("Button Clicked");
+        setTemp(++Temp);      
+    }
+    function increaseTemp() {
+        console.log("Button Clicked");
+        setTemp(--Temp);      
     }
 
   return (
    <div className={`room ${isLit ? "lit" : "dark"}`}>
-     The Room is {isLit? "lit": "dark"}
+     The Room is {isLit? "lit": "dark"}, Click ON/OFF buttons to change room color, Thank You
      <br/>
-     Age: {Age}
+     <button onClick = {onLit} >ON</button>
+     <button onClick = {offLit} >OFF</button>
      <br/>
-     <button onClick = {updateLit} >Toggle Light</button>
+     And the current temperature is : {Temp}(F), Click +/- buttons to increase/decrese temperature :)
      <br/>
      <button onClick={()=>{
-         console.log("Increse Age by Arrow Function");
-         setAge(++Age);
-     }}>Increse Age by Arrow Function</button>
-     <br/>
-     <button onClick = {increaseAge} >Increase Age</button>
+         console.log("Increse Temperature by Arrow Function");
+         setTemp(++Temp);
+     }}>+</button>
+     <button onClick = {increaseTemp} >-</button>
    </div>
   );
 }
